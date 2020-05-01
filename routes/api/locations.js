@@ -6,8 +6,8 @@ https://github.com/lutangar/cities.json
 */
 const cities = require('cities.json');
 
-router.get('/jfile',(req,res) =>{
-    res.json(getCity("Lyon"));
+router.get('/a',(req,res) =>{
+    res.json(cities);
 });
 
 router.get('/:name',(req,res) =>{
@@ -18,5 +18,11 @@ router.get('/:name',(req,res) =>{
         res.status(400).json({msg:`Location ${req.params.name}, could not be found`});
     }
 });
+
+
+//placeholder post method
+router.post('/' ,(req,res) =>{
+    res.send(req.body);
+})
 
 module.exports = router;
