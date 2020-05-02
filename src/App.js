@@ -8,16 +8,18 @@ class App extends React.Component{
         //lifecycle method
         state = {
             data: {},
-            
+
         }
     async componentDidMount(){
-        const data = await fetchData();
-        console.log(data);
+        const fetchPayload = await fetchData();
+        this.setState({data:fetchPayload});
+       // console.log(data);
     };
     render(){
+        const {data} = this.state;
         return(
             <div className = {styles.container}>
-                <Cards />
+                <Cards  data = {data}/>
                 <SearchBar />
                 <Charts />
             </div>
