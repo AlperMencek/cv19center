@@ -5,11 +5,12 @@ import {Cards, Charts, SearchBar} from './components';
 import {fetchData} from './api';
 import styles from './App.module.css';
 class App extends React.Component{
-        //lifecycle method
+       
         state = {
             data: {},
             country: '',
         }
+     //lifecycle method
     async componentDidMount(){
         const fetchPayload = await fetchData();
         this.setState({data:fetchPayload});
@@ -18,16 +19,18 @@ class App extends React.Component{
 
     //handling picker country change
      handleCountryChange = async (country) =>{
-        console.log(country);
+        const data = await fetchData(country);
+        console.log(data)
+        this.setState({ data, country: country});
 
     }
     render(){
-        const {data} = this.state;
+        const {data, country} = this.state;
         return(
             <div className={styles.container}>
                 <Cards  data = {data}/>
                 <SearchBar  handleCountryChange = {this.handleCountryChange}/>
-                <Charts />
+                <Charts data = {data} country = {country} />
             </div>
         )
     }
