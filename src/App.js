@@ -8,19 +8,25 @@ class App extends React.Component{
         //lifecycle method
         state = {
             data: {},
-
+            country: '',
         }
     async componentDidMount(){
         const fetchPayload = await fetchData();
         this.setState({data:fetchPayload});
        // console.log(data);
     };
+
+    //handling picker country change
+     handleCountryChange = async (country) =>{
+        console.log(country);
+
+    }
     render(){
         const {data} = this.state;
         return(
-            <div className = {styles.container}>
+            <div className={styles.container}>
                 <Cards  data = {data}/>
-                <SearchBar />
+                <SearchBar  handleCountryChange = {this.handleCountryChange}/>
                 <Charts />
             </div>
         )
