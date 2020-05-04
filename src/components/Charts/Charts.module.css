@@ -2,6 +2,8 @@
     display: flex;
     justify-content: center;
     width: 85%;
+    background-color: rgb(185, 195, 195);
+    color: black;
 }
 
 @media( max-width:770px ){
