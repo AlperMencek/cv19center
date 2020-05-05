@@ -1,69 +1,79 @@
 import React from 'react';
 import { Card, CardContent, Typography, Grid} from '@material-ui/core';
-
+import { makeStyles } from '@material-ui/core/styles';
+import NumberFormat from 'react-number-format';
 import styles from './Cards.module.css'
 import CountUp from'react-countup';
 import cx from 'classnames';
-
+const useStyles = makeStyles({
+  gridContainer: {
+    padding: '',
+  },
+  card3:{
+    
+  }
+});
 
 const GlobalCard = ({c19data:{Global , dateTime}}) => {
-    if(!Global){return('loading...')}
+  const classes = useStyles();  
+  if(!Global){return('loading...')}
+    
     return(
-        <div className={styles.container}>
-          <Typography variant = "h4"  component = "h1">Global</Typography>
-        <Grid container spacing={3}justify="center">
-          {/* <Grid item  xs={12} md ={3}  component={Card} className={cx(styles.card, styles.infected)}> */}
+      <div className={styles.container}>
+        <div className={styles.title}>  <h1 >WorldWide</h1>
+        <h4 className ={styles.dateheader} > {new Date(dateTime).toDateString()}</h4></div>
+        <Grid container spacing={1}justify="center" className={classes.gridContainer} >
+          <Grid item   component={CardContent} className={cx(styles.card, styles.infected)}>
             <CardContent flexDirection="row" alignContent="flex-start">
-              <Typography color="textSecondary" gutterBottom>
+              <Typography color="textSecondary" >
                 Total Infected 
               </Typography>
-              <Typography variant="h5" component="h2">
+              <Typography variant="h5" component="h2" >
                 <CountUp start={0} end={Global.TotalConfirmed} duration={1} separator="," />
               </Typography>
-              <Typography> New Confirmed </Typography>
-              <Typography>
+              <Typography color="textSecondary"> New Confirmed </Typography>
+              <Typography variant="h6" component="h2">
               <CountUp start={0} end={Global.NewConfirmed} duration={1} separator="," />
               </Typography>
-              <Typography color="textSecondary">
-                {new Date(dateTime).toDateString()}
-              </Typography>
-              <Typography variant="body2" component="p">
-                Number of active cases of COVID-19.
-              </Typography>
             </CardContent>
-          {/* </Grid> */}
-          {/* <Grid item xs={12} md={3} component={Card} className={cx(styles.card, styles.recovered)}> */}
-            <CardContent>
-              <Typography color="textSecondary" gutterBottom>
-                Recovered
+         
+          </Grid>
+          <Grid item  component={CardContent} className={cx(styles.card, styles.recovered)}>
+            <CardContent >
+              <Typography color="textSecondary" >
+                Total Recovered
               </Typography>
               <Typography variant="h5" component="h2">
                 <CountUp start={0} end={Global.TotalRecovered} duration={1} separator="," />
               </Typography>
-              <Typography color="textSecondary">
-                {new Date(dateTime).toDateString()}
+              <Typography color="textSecondary"> New Recovered </Typography>
+              <Typography variant="h6" component="h2">
+              <CountUp start={0} end={Global.NewRecovered} duration={1} separator="," />
               </Typography>
               <Typography variant="body2" component="p">
-                Number of recoveries from COVID-19.
               </Typography>
             </CardContent>
-          {/* </Grid> */}
-          {/* <Grid item xs={12} md={3} component={Card} className={cx(styles.card, styles.deaths)}> */}
-            <CardContent>
-              <Typography color="textSecondary" gutterBottom>
-                Deaths
+          </Grid>
+          <Grid item  component={CardContent} className={cx(styles.card, styles.deaths)}>
+            <CardContent >
+              <Typography color="textSecondary" >
+                Total Deaths
               </Typography>
               <Typography variant="h5" component="h2">
                 <CountUp start={0} end={Global.TotalDeaths} duration={1} separator="," />
               </Typography>
-              <Typography color="textSecondary">
-                {new Date(dateTime).toDateString()}
+              <Typography color="textSecondary"> New Deaths </Typography>
+              <Typography variant="h6" component="h2">
+              <CountUp start={0} end={Global.NewDeaths} duration={1} separator="," />
               </Typography>
               <Typography variant="body2" component="p">
-                Number of deaths caused by COVID-19.
               </Typography>
             </CardContent>
-          {/* </Grid> */}
+          </Grid>
+          <Typography variant="body2" component="p" >
+               Global total Mortality,
+               <NumberFormat value={Global.TotalDeaths/Global.TotalConfirmed} displayType={'text'} thousandSeparator={true} prefix ={' '}  decimalScale ={'2'} />%
+              </Typography>
           </Grid>
         
       </div>
