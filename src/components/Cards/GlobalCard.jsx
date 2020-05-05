@@ -6,12 +6,10 @@ import styles from './Cards.module.css'
 import CountUp from'react-countup';
 import cx from 'classnames';
 const useStyles = makeStyles({
-  gridContainer: {
-    padding: '',
-  },
-  card3:{
+   bot:{
+     paddingBottom: '2em',
     
-  }
+   }
 });
 
 const GlobalCard = ({c19data:{Global , dateTime}}) => {
@@ -22,7 +20,7 @@ const GlobalCard = ({c19data:{Global , dateTime}}) => {
       <div className={styles.container}>
         <div className={styles.title}>  <h1 >WorldWide</h1>
         <h4 className ={styles.dateheader} > {new Date(dateTime).toDateString()}</h4></div>
-        <Grid container spacing={1}justify="center" className={classes.gridContainer} >
+        <Grid container spacing={1}justify="center"  >
           <Grid item   component={CardContent} className={cx(styles.card, styles.infected)}>
             <CardContent flexDirection="row" alignContent="flex-start">
               <Typography color="textSecondary" >
@@ -70,7 +68,7 @@ const GlobalCard = ({c19data:{Global , dateTime}}) => {
               </Typography>
             </CardContent>
           </Grid>
-          <Typography variant="body2" component="p" >
+          <Typography variant="body2" component="p" className={classes.bot} >
                Global total Mortality,
                <NumberFormat value={Global.TotalDeaths/Global.TotalConfirmed} displayType={'text'} thousandSeparator={true} prefix ={' '}  decimalScale ={'2'} />%
               </Typography>

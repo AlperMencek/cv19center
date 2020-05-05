@@ -25,6 +25,10 @@
 .card{
     margin: 0 2% !important;
     width: 190px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   
   
 }
 .infected{
