@@ -35,12 +35,13 @@ export const fetchSumData = async (country) =>{
     // }
     try {
 
-        const { data: {Global, Date : dateTime}} = await axios.get(fetchURL);
+        const { data: {Global, Date : dateTime, Countries}} = await axios.get(fetchURL);
         //structuring the response data from api
-        console.log(Global);
+      
        return {
             Global,
-            dateTime
+            dateTime,
+            Countries,
         };
 
     } catch (error) {
@@ -57,6 +58,18 @@ export const fetchDailyData = async() =>{
         } catch (error) {
         return error;
     }
+}
+
+export const fetchCountries = async() =>{
+    try {
+        const { data } = await axios.get(`${c19URL}/summary`);
+        return data.map(({Countries }) => ({ Countries  }));
+
+        console.log(data)
+        } catch (error) {
+        return error;
+    }
+    
 }
 
 
