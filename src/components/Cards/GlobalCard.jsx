@@ -12,10 +12,11 @@ const useStyles = makeStyles({
    }
 });
 
-const GlobalCard = ({c19data:{Global , dateTime}}) => {
+const GlobalCard = ({c19data:{Global , dateTime,Countries}}) => {
   const classes = useStyles();  
+  console.log("The COUNTRIES ARE", Countries)
   if(!Global){return('loading...')}
-    
+   
     return(
       <div className={styles.container}>
         <div className={styles.title}>  <h1 >WorldWide</h1>
