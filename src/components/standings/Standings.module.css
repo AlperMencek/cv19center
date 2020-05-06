@@ -12,12 +12,23 @@
     justify-content: space-evenly;
     flex: 0 0 40em;
 }
+.topTitle{
+    /* display: flex; */
+    font-size: 4em;
+    text-align: center;
+    color: white;
+    align-items: center;
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    margin: 2%;
+    border-bottom:10px solid rgb(41, 40, 40);
+    
+}
 .widthCol{
     width: 20%;
    
 }
 .title{
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
 }
 .subTitle{
@@ -44,6 +55,11 @@
 }
 .countVal{
     font-size: 1.5em;
+}
+.numbers{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 4.5em;
+    color: whitesmoke;
 }
 
 

@@ -29,7 +29,9 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
   if(!Global){return('loading...')}
    
     return(
+     
     <div class="container" >
+        <div className = {styles.topTitle}>Top Countries</div> 
         <div class="row justify-content-center">
             <div class="col-lg"   className = {styles.container}>
                 <div className = {styles.numOne} >#1</div>
@@ -83,6 +85,44 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
                 <div className = {styles.widthCol}>
                     <div className = {styles.subTitle}>Total Deaths:</div>
                     <div className = {styles.countVal}><CountUp start={0} end={allCountries[2].TotalDeaths} duration={1.5} separator="," /></div>
+                </div>
+            </div>
+        </div>
+        {/* Fourth Place */}
+        <div class="row justify-content-center">
+            <div class="col-lg" className = {styles.container}>
+                <div className = {styles.numbers} >#4</div>
+                <div className = {styles.widthCol}>
+                    <div className ={styles.title} >
+                        {allCountries[3].Country}
+                    </div>
+                    </div>
+                <div className = {styles.widthCol}>
+                    <div className = {styles.subTitle}>Total Infected:</div>
+                    <div  className = {styles.countVal} > <CountUp start={0} end={allCountries[3].TotalConfirmed} duration={1.5} separator="," /></div>
+                </div>
+                <div className = {styles.widthCol}>
+                    <div className = {styles.subTitle}>Total Deaths:</div>
+                    <div className = {styles.countVal}><CountUp start={0} end={allCountries[3].TotalDeaths} duration={1.5} separator="," /></div>
+                </div>
+            </div>
+        </div>
+         {/* Fifth Place */}
+         <div class="row justify-content-center">
+            <div class="col-lg" className = {styles.container}>
+                <div className = {styles.numbers} >#5</div>
+                <div className = {styles.widthCol}>
+                    <div className ={styles.title} >
+                        {allCountries[4].Country}
+                    </div>
+                    </div>
+                <div className = {styles.widthCol}>
+                    <div className = {styles.subTitle}>Total Infected:</div>
+                    <div  className = {styles.countVal} > <CountUp start={0} end={allCountries[4].TotalConfirmed} duration={1.5} separator="," /></div>
+                </div>
+                <div className = {styles.widthCol}>
+                    <div className = {styles.subTitle}>Total Deaths:</div>
+                    <div className = {styles.countVal}><CountUp start={0} end={allCountries[4].TotalDeaths} duration={1.5} separator="," /></div>
                 </div>
             </div>
         </div>
