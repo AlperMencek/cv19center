@@ -5,6 +5,11 @@ import NumberFormat from 'react-number-format';
 import styles from './Standings.module.css'
 import CountUp from'react-countup';
 import cx from 'classnames';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Toast from 'react-bootstrap/Toast';
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+
 const useStyles = makeStyles({
    bot:{
      paddingBottom: '2em',
@@ -24,8 +29,63 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
   if(!Global){return('loading...')}
    
     return(
-    <div>
-        {allCountries[0].Country}
+    <div class="container" >
+        <div class="row justify-content-center">
+            <div class="col-lg"   className = {styles.container}>
+                <div className = {styles.numOne} >#1</div>
+                <div className = {styles.widthCol}>
+                    <div className ={styles.title} >
+                        {allCountries[0].Country}
+                    </div>
+                    </div>
+                <div className = {styles.widthCol}>
+                    <div className = {styles.subTitle}>Total Infected:</div>
+                    <div  className = {styles.countVal} > <CountUp start={0} end={allCountries[0].TotalConfirmed} duration={1.5} separator="," /></div>
+                </div>
+                <div className = {styles.widthCol}>
+                    <div className = {styles.subTitle}>Total Deaths:</div>
+                    <div className = {styles.countVal}><CountUp start={0} end={allCountries[0].TotalDeaths} duration={1.5} separator="," /></div>
+                </div>
+            </div>
+        </div>
+        {/* second place */}
+        <div class="row justify-content-center">
+            <div class="col-lg" className = {styles.container}>
+                <div className = {styles.numTwo} >#2</div>
+                <div className = {styles.widthCol}>
+                    <div className ={styles.title} >
+                        {allCountries[1].Country}
+                    </div>
+                    </div>
+                <div className = {styles.widthCol}>
+                    <div className = {styles.subTitle}>Total Infected:</div>
+                    <div  className = {styles.countVal} > <CountUp start={0} end={allCountries[1].TotalConfirmed} duration={1.5} separator="," /></div>
+                </div>
+                <div className = {styles.widthCol}>
+                    <div className = {styles.subTitle}>Total Deaths:</div>
+                    <div className = {styles.countVal}><CountUp start={0} end={allCountries[1].TotalDeaths} duration={1.5} separator="," /></div>
+                </div>
+            </div>
+        </div>
+        {/* third place */}
+        <div class="row justify-content-center">
+            <div class="col-lg" className = {styles.container}>
+                <div className = {styles.numThree} >#3</div>
+                <div className = {styles.widthCol}>
+                    <div className ={styles.title} >
+                        {allCountries[2].Country}
+                    </div>
+                    </div>
+                <div className = {styles.widthCol}>
+                    <div className = {styles.subTitle}>Total Infected:</div>
+                    <div  className = {styles.countVal} > <CountUp start={0} end={allCountries[2].TotalConfirmed} duration={1.5} separator="," /></div>
+                </div>
+                <div className = {styles.widthCol}>
+                    <div className = {styles.subTitle}>Total Deaths:</div>
+                    <div className = {styles.countVal}><CountUp start={0} end={allCountries[2].TotalDeaths} duration={1.5} separator="," /></div>
+                </div>
+            </div>
+        </div>
     </div>
     )
 }

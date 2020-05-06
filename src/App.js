@@ -1,6 +1,8 @@
 import React from 'react';
 import reactDOM from 'react-dom';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import {Cards, GlobalCard, Charts, SearchBar, Standings} from './components';
 import {fetchData , fetchSumData} from './api';
 import styles from './App.module.css';
