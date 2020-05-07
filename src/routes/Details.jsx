@@ -6,6 +6,7 @@ import {
     Link
   } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {DetailsCard} from '../components';
 
 import {Cards, GlobalCard, Charts, SearchBar, Standings} from '../components';
 
@@ -25,7 +26,7 @@ class Details extends React.Component{
     return(
         <div>
             <h1>Details Page</h1>
-            <h2>{selectionTitle}</h2>
+            <DetailsCard/>
         </div>
      
         )
