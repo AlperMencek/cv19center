@@ -70,8 +70,8 @@ const GlobalCard = ({c19data:{Global , dateTime,Countries}}) => {
             </CardContent>
           </Grid>
           <Typography variant="body2" component="p" className={classes.bot} >
-               Global total Mortality,
-               <NumberFormat value={Global.TotalDeaths/Global.TotalConfirmed} displayType={'text'} thousandSeparator={true} prefix ={' '}  decimalScale ={'2'} />%
+               Global total Mortality :
+               <NumberFormat value={(Global.TotalDeaths/Global.TotalConfirmed)*100} displayType={'text'} thousandSeparator={true} prefix ={' '}  decimalScale ={'2'} />%
               </Typography>
           </Grid>
         
