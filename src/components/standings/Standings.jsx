@@ -36,7 +36,12 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
 
         <div className = {styles.topTitle}>Top Countries</div> 
         
-         <Link to='/details'> 
+         <Link to={{ 
+             pathname:'/details',
+             state:{
+                 title: allCountries[0].Country
+             }
+        }}> 
         <div class="row justify-content-center">
             <div class="col-lg"   className = {styles.container}>
                 <div className = {styles.numOne} >#1</div>
