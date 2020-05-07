@@ -1,11 +1,15 @@
 import React from 'react';
-import reactDOM from 'react-dom';
-
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import {Cards, GlobalCard, Charts, SearchBar, Standings} from './components';
 import {fetchData , fetchSumData} from './api';
 import styles from './App.module.css';
+import Details from './routes/Details';
 class App extends React.Component{
        
         state = {
@@ -18,7 +22,7 @@ class App extends React.Component{
     async componentDidMount(){
         const fetchPayload = await fetchData();
         const fetchRes = await fetchSumData();
-        console.log(fetchRes)
+      
         this.setState({data:fetchPayload, c19data: fetchRes });
         
        // console.log(data);

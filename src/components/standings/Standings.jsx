@@ -9,6 +9,8 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import Toast from 'react-bootstrap/Toast';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
+import {BrowserRouter as Router, Switch, Route,Link } from "react-router-dom";
+import Details from '../../routes/Details';
 
 const useStyles = makeStyles({
    bot:{
@@ -29,9 +31,12 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
   if(!Global){return('loading...')}
    
     return(
-     
+    
     <div class="container" >
+
         <div className = {styles.topTitle}>Top Countries</div> 
+        
+         <Link to='/details'> 
         <div class="row justify-content-center">
             <div class="col-lg"   className = {styles.container}>
                 <div className = {styles.numOne} >#1</div>
@@ -50,6 +55,7 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
                 </div>
             </div>
         </div>
+         </Link> 
         {/* second place */}
         <div class="row justify-content-center">
             <div class="col-lg" className = {styles.container}>
@@ -127,6 +133,9 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
             </div>
         </div>
     </div>
+    
+  
+    
     )
 }
 
