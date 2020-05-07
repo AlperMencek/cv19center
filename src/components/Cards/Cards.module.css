@@ -14,8 +14,9 @@
     flex-direction: column;
     width: 100%;
     color:rgb(255, 255, 255);
-    background-color: rgb(41, 40, 40);
-   
+    background-color: rgb(40, 40, 40);
+    border-top-left-radius: 6.1px;
+    border-top-right-radius: 6.1px;
     
 }
 .dateheader{

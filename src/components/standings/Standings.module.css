@@ -20,7 +20,7 @@
     align-items: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 2%;
-    border-bottom:10px solid rgb(41, 40, 40);
+    border-bottom:10px solid rgb(40, 40, 40);
     
 }
 .widthCol{
@@ -68,6 +68,7 @@
         flex-direction: column;
         flex: 0 0 15em;
         width: 100%;
+        margin: 1.5%;
         
     }
     .widthCol{
