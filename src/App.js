@@ -25,7 +25,6 @@ class App extends React.Component{
       
         this.setState({data:fetchPayload, c19data: fetchRes });
         
-       // console.log(data);
     };
 
     //handling picker country change
