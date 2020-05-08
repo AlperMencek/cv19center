@@ -1,9 +1,57 @@
 .container{
     display: flex;
     flex-direction: column;
+    align-content: center;
     /* padding: 1.5%; */
     border-radius: 7px;
     align-items: center;
     margin: 50px 0;
+    color: black;
     background-color: aquamarine;
+    width: 600px;
+}
+.title{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    background-color: rgb(40, 40, 40);
+    width: 100%;
+    color: whitesmoke;
+    font-size: 2em;
+    
+}
+
+.box{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.col{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 1%;
+    width: 200px;
+   
+}
+
+
+@media( max-width:770px ){
+    .container{
+        flex-direction: column;
+        
+        width: 80%;
+        margin: 3.5%;
+        
+    }
+    .box{
+        display: flex;
+        flex-direction: column;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .col{
+        margin-top: 10%;
+        width: 100%;
+    }
 }
