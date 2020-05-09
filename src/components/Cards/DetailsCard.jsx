@@ -12,24 +12,34 @@ import Button from 'react-bootstrap/Button';
 import {BrowserRouter as Router, Switch, Route,Link } from "react-router-dom";
 
 //Get the value from Details
-const DetailsCard = ({sTitle:selectionTitle, slug:slugTitle, newConfirmed,totalConfirmed,newDeaths,totalDeaths,newRecovered,totalRecovered,update, country}) =>{
-    console.log(selectionTitle)
-    console.log()
+const DetailsCard = ({sTitle:selectionTitle, slug:slugTitle, c19Data:{Countries}}) =>{
+    if(!Countries){return('loading...')}
+        console.log(Countries)
+
+    var Arr = Countries;
+    console.log(Arr)
+    console.log("Selection")
+    var selection = Arr.find(obj => {
+        return obj.Slug === slugTitle
+      })
+
+      console.log(selection)
+
 return(
     <div className={styles.container}>
         <div className = {styles.title}>{selectionTitle}</div> 
         <div className={styles.box}>
             <div className={styles.col}>
                 <h6>Total Infected</h6>
-                <CountUp start={0} end={totalConfirmed} duration={1} separator="," />
+                <CountUp start={0} end={selection.TotalConfirmed} duration={1} separator="," />
             </div>
             <div className={styles.col}>
                 <h6>Total Recovered</h6>
-                <CountUp start={0} end={totalRecovered} duration={1} separator="," />
+                <CountUp start={0} end={selection.TotalRecovered} duration={1} separator="," />
             </div>
             <div className={styles.col}>
                 <h6>Total Deaths</h6>
-                <CountUp start={0} end={totalDeaths} duration={1} separator="," />
+                <CountUp start={0} end={selection.TotalDeaths} duration={1} separator="," />
             </div>
         </div>
     

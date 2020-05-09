@@ -42,13 +42,6 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
              state:{
                  title: allCountries[0].Country,
                  slug: allCountries[0].Slug,
-                 newConfirmed: allCountries[0].NewConfirmed,
-                 totalConfirmed: allCountries[0].TotalConfirmed,
-                 newDeaths: allCountries[0].NewDeaths,
-                 totalDeaths: allCountries[0].TotalDeaths,
-                 newRecovered: allCountries[0].NewRecovered,
-                 totalRecovered: allCountries[0].TotalRecovered,
-                 update: allCountries[0].Date,
                 }
 
         }}> 
