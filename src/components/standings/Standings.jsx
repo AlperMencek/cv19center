@@ -65,6 +65,14 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
         </div>
          </Link> 
         {/* second place */}
+        <Link to={{ 
+             pathname:'/details',
+             state:{
+                 title: allCountries[1].Country,
+                 slug: allCountries[1].Slug,
+                }
+
+        }}> 
         <div class="row justify-content-center">
             <div class="col-lg" className = {styles.container}>
                 <div className = {styles.numTwo} >#2</div>
@@ -83,7 +91,16 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
                 </div>
             </div>
         </div>
+        </Link>
         {/* third place */}
+        <Link to={{ 
+             pathname:'/details',
+             state:{
+                 title: allCountries[2].Country,
+                 slug: allCountries[2].Slug,
+                }
+
+        }}> 
         <div class="row justify-content-center">
             <div class="col-lg" className = {styles.container}>
                 <div className = {styles.numThree} >#3</div>
@@ -102,7 +119,16 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
                 </div>
             </div>
         </div>
+        </Link>
         {/* Fourth Place */}
+        <Link to={{ 
+             pathname:'/details',
+             state:{
+                 title: allCountries[3].Country,
+                 slug: allCountries[3].Slug,
+                }
+
+        }}> 
         <div class="row justify-content-center">
             <div class="col-lg" className = {styles.container}>
                 <div className = {styles.numbers} >#4</div>
@@ -121,7 +147,16 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
                 </div>
             </div>
         </div>
+        </Link>
          {/* Fifth Place */}
+         <Link to={{ 
+             pathname:'/details',
+             state:{
+                 title: allCountries[4].Country,
+                 slug: allCountries[4].Slug,
+                }
+
+        }}> 
          <div class="row justify-content-center">
             <div class="col-lg" className = {styles.container}>
                 <div className = {styles.numbers} >#5</div>
@@ -140,6 +175,7 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
                 </div>
             </div>
         </div>
+        </Link>
     </div>
     
   

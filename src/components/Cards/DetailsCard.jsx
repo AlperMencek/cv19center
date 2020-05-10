@@ -30,17 +30,21 @@ return(
         <div className = {styles.title}>{selectionTitle}</div> 
         <div className={styles.box}>
             <div className={styles.col}>
-                <h6>Total Infected</h6>
-                <CountUp start={0} end={selection.TotalConfirmed} duration={1} separator="," />
+                <div className={styles.inTitle}>Total Infected</div>
+                    <div>
+                    <CountUp start={0} end={selection.TotalConfirmed} duration={1} separator="," />
+                    </div>
             </div>
             <div className={styles.col}>
-                <h6>Total Recovered</h6>
-                <CountUp start={0} end={selection.TotalRecovered} duration={1} separator="," />
-            </div>
+                <div className={styles.inTitle}>Total Recovered</div>
+                    <div>
+                        <CountUp start={0} end={selection.TotalRecovered} duration={1} separator="," />
+                    </div>
+                </div>
             <div className={styles.col}>
-                <h6>Total Deaths</h6>
-                <CountUp start={0} end={selection.TotalDeaths} duration={1} separator="," />
-            </div>
+                <div className={styles.inTitle}>Total Deaths</div>
+                    <div><CountUp start={0} end={selection.TotalDeaths} duration={1} separator="," /> </div>
+                </div>
         </div>
     
     </div>
