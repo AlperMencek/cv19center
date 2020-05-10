@@ -35,7 +35,6 @@ class Details extends React.Component{
   
     return(
         <div className={styles.container}>
-            <h1 >{selectionTitle}</h1>
             <DetailsCard sTitle={selectionTitle} slug={slugTitle} c19Data={c19Data} />
         </div>
      
