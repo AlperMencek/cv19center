@@ -14,7 +14,7 @@ const SelectionChart = ({ slug: slugTitle }) => {
             setDailyData(await fetchc19DailyData(slugTitle));
         }
         fetchAPI();
-    }, [slugTitle]);
+    }, []);
 
     const lineChart = (
         dailyData.length ? (<Line
@@ -22,18 +22,11 @@ const SelectionChart = ({ slug: slugTitle }) => {
                 labels: dailyData.map(({ date }) => date),
                 datasets: [
                     {
-                        data: dailyData.map(({ Confirmed }) => Confirmed),
+                        data: dailyData.map(({ Cases }) => Cases),
                         label: "Confirmed",
                         borderColor: 'rgb(255, 255, 255)',
                         fill: true,
                         backgroundColor: 'rgb(255, 255, 255,.2)',
-                    },
-                    {
-                        data: dailyData.map(({ Deaths }) => Deaths),
-                        label: "Deaths",
-                        borderColor: 'rgb(218, 5, 86)',
-                        backgroundColor: 'rgb(218, 5, 86,.7)',
-                        fill: true
                     }],
             }} options={{
                 responsive: true,

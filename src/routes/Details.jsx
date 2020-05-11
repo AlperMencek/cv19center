@@ -24,6 +24,8 @@ class Details extends React.Component {
         const { handle } = this.props.match.params;
         const { title } = this.props.location.state;
         const { slug } = this.props.location.state;
+
+        //Need to fix this
         const fetchRes = await fetchSumData();
         this.setState({ selectionTitle: title, slugTitle: slug, c19Data: fetchRes })
     }
