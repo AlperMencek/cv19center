@@ -95,6 +95,7 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
         {/* third place */}
         <Link to={{ 
              pathname:'/details',
+             
              state:{
                  title: allCountries[2].Country,
                  slug: allCountries[2].Slug,

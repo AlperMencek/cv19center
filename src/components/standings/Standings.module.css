@@ -62,6 +62,10 @@
     color: whitesmoke;
 }
 
+.link{
+    color: none;
+}
+
 
 @media( max-width:770px ){
     .container{

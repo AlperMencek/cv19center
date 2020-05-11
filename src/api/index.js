@@ -96,25 +96,21 @@ export const countries = async() =>{
 
 
 export const fetchc19DailyData = async (country) =>{
-    let fetchURL = url;
-
+    let fetchURL = c19URL;
     if (country) {
-        console.log('within IF')
-      fetchURL = `${url}/countries/${country.toUpperCase()}`;
+      fetchURL = `${c19URL}total/dayone/country/${country}/status/confirmed`;
       console.log(fetchURL)
     }
     try {
-
-        const { data: {confirmed, recovered, deaths, lastUpdate}} = await axios.get(fetchURL);
-        //structuring the response data from api
-       return {
-            confirmed,
-            recovered,
-            deaths,
-            lastUpdate
+        
+        const { data: {Cases, Date:date}} = await axios.get(fetchURL);
+        
+        return {
+        Cases,
+        date
         };
 
     } catch (error) {
-        
+        return error;
     }
 }

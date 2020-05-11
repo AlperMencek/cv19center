@@ -49,7 +49,18 @@ h6{
     color:rgb(60, 60, 60);
     display: inline-block;
 }
+.date{
+    font-size: .5em;
+    margin-bottom: .2em;
+}
+.values{
+    font-size: 1.5em;
+}
+.mortality{
+    font-size: .9em;
+    padding-bottom: 1%;
 
+}
 
 @media( max-width:770px ){
     .container{

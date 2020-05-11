@@ -4,4 +4,5 @@ export { default as GlobalCard} from './Cards/GlobalCard';
 export { default as SearchBar} from './searchBar/searchBar';
 export { default as Standings} from './standings/Standings';
 export { default as DetailsCard} from './Cards/DetailsCard';
+export { default as SelectionChart} from './Charts/SelectionChart';
 
