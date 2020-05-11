@@ -17,28 +17,32 @@ class Details extends React.Component {
     state = {
         selectionTitle: '',
         slugTitle: '',
-        c19Data: {},
+        c19Data: [],
 
     }
     async componentDidMount() {
         const { handle } = this.props.match.params;
         const { title } = this.props.location.state;
         const { slug } = this.props.location.state;
-
+        const all = this.props.location.state;
         //Need to fix this
-        const fetchRes = await fetchSumData();
-        this.setState({ selectionTitle: title, slugTitle: slug, c19Data: fetchRes })
+       // const fetchRes = await fetchSumData();
+        this.setState({ selectionTitle: title, slugTitle: slug, c19Data: all })
     }
 
     render() {
         const { selectionTitle, slugTitle, c19Data } = this.state
-
-        if(this.props.location.state && this.props.location.state.slug){
+        
+        if(this.props.location.state && this.props.location.state.slug && this.props.location.state.all){
+            console.log('within conditional')
+           
             const slug = this.props.location.state.slug;
+            const c19Data = this.props.location.state.all;
+            console.log(c19Data)
             return(
                 <div className={styles.container}>
                     <DetailsCard sTitle={selectionTitle} slug={slug} c19Data={c19Data} />
-                    <SelectionChart slug={slug}> </SelectionChart>
+                    <SelectionChart slug={slug} sTitle={selectionTitle}> </SelectionChart>
                 </div>
             )
         }

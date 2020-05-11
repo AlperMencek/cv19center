@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { fetchc19DailyData } from '../../api';
 import { Line, Bar } from 'react-chartjs-2';
-import styles from './Charts.module.css';
-const SelectionChart = ({ slug: slugTitle }) => {
+import styles from './SChart.module.css';
+const SelectionChart = ({ slug: slugTitle, sTitle:selectionTitle}) => {
 
     const [dailyData, setDailyData] = useState([]);
 
     useEffect(() => {
 
-        console.log(slugTitle)
+        // console.log(slugTitle)
         const fetchAPI = async () => {
-            console.log("within fetchAPI")
+            // console.log("within fetchAPI")
             setDailyData(await fetchc19DailyData(slugTitle));
         }
         fetchAPI();
@@ -19,7 +19,7 @@ const SelectionChart = ({ slug: slugTitle }) => {
     const lineChart = (
         dailyData.length ? (<Line
             data={{
-                labels: dailyData.map(({ date }) => date),
+                labels: dailyData.map(({ date }) => new Date(date).toLocaleDateString()),
                 datasets: [
                     {
                         data: dailyData.map(({ Cases }) => Cases),
@@ -31,7 +31,7 @@ const SelectionChart = ({ slug: slugTitle }) => {
             }} options={{
                 responsive: true,
                 maintainAspectRatio: false,
-                title: { text: "World Data", display: true, fontColor: 'white', fontSize: 30, },
+                title: { text: selectionTitle, display: true, fontColor: 'white', fontSize: 30, },
                 scales: {
                     yAxes: [
                         {

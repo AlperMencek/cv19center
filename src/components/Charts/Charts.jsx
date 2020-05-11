@@ -15,7 +15,7 @@ const Charts = () => {
     const lineChart = (
         dailyData.length?(<Line
         data={{
-        labels: dailyData.map(({date})=>date),
+        labels: dailyData.map(({date})=>new Date(date).toLocaleDateString()),
         datasets:[
             {
             data: dailyData.map(({confirmed})=>confirmed),

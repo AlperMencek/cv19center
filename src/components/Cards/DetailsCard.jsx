@@ -12,10 +12,11 @@ import Button from 'react-bootstrap/Button';
 import {BrowserRouter as Router, Switch, Route,Link } from "react-router-dom";
 
 //Get the value from Details
-const DetailsCard = ({sTitle:selectionTitle, slug:slugTitle, c19Data:{Countries}}) =>{
-    if(!Countries){return('loading...')}
-
-    var Arr = Countries;
+const DetailsCard = ({sTitle:selectionTitle, slug:slugTitle, c19Data}) =>{
+    console.log(c19Data)
+    // if(!Countries){return('loading...')}
+    if(!c19Data){return('loading...')}
+    var Arr = c19Data;
     var selection = Arr.find(obj => {
         return obj.Slug === slugTitle
       })

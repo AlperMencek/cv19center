@@ -21,6 +21,7 @@ const useStyles = makeStyles({
 
 const Standings= ({c19data:{Global , dateTime,Countries}}) => {
   const classes = useStyles();  
+    if(!Countries) return ('loading...')
   var allCountries = Countries;
     //Sort the countries in order to get the top Total confirmed cases.
     if(allCountries){
@@ -31,6 +32,7 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
   if(!Global){return('loading...')}
    let Country1 = allCountries[0];
    console.log(Country1)
+   if(allCountries.length != 0){
     return(
     
     <div class="container" >
@@ -42,11 +44,12 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
              state:{
                  title: allCountries[0].Country,
                  slug: allCountries[0].Slug,
+                 all: allCountries,
                 }
 
-        }}> 
-        <div class="row justify-content-center">
-            <div class="col-lg"   className = {styles.container}>
+        }} > 
+        <div className="row justify-content-center">
+            <div className="col-lg"   className = {styles.container}>
                 <div className = {styles.numOne} >#1</div>
                 <div className = {styles.widthCol}>
                     <div className ={styles.title} >
@@ -70,11 +73,12 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
              state:{
                  title: allCountries[1].Country,
                  slug: allCountries[1].Slug,
+                 all:allCountries,
                 }
 
         }}> 
-        <div class="row justify-content-center">
-            <div class="col-lg" className = {styles.container}>
+        <div className="row justify-content-center">
+            <div className="col-lg" className = {styles.container}>
                 <div className = {styles.numTwo} >#2</div>
                 <div className = {styles.widthCol}>
                     <div className ={styles.title} >
@@ -99,11 +103,12 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
              state:{
                  title: allCountries[2].Country,
                  slug: allCountries[2].Slug,
+                 all:allCountries,
                 }
 
         }}> 
-        <div class="row justify-content-center">
-            <div class="col-lg" className = {styles.container}>
+        <div className="row justify-content-center">
+            <div className="col-lg" className = {styles.container}>
                 <div className = {styles.numThree} >#3</div>
                 <div className = {styles.widthCol}>
                     <div className ={styles.title} >
@@ -127,11 +132,12 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
              state:{
                  title: allCountries[3].Country,
                  slug: allCountries[3].Slug,
+                 all:allCountries,
                 }
 
         }}> 
-        <div class="row justify-content-center">
-            <div class="col-lg" className = {styles.container}>
+        <div className="row justify-content-center">
+            <div className="col-lg" className = {styles.container}>
                 <div className = {styles.numbers} >#4</div>
                 <div className = {styles.widthCol}>
                     <div className ={styles.title} >
@@ -155,6 +161,7 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
              state:{
                  title: allCountries[4].Country,
                  slug: allCountries[4].Slug,
+                 all:allCountries,
                 }
 
         }}> 
@@ -182,6 +189,7 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
   
     
     )
+   }
 }
 
 export default Standings;
