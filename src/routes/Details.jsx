@@ -6,7 +6,7 @@ import {
     Link
   } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {DetailsCard} from '../components';
+import {DetailsCard,SelectionChart} from '../components';
 import styles from './details.module.css'
 import {fetchData , fetchSumData} from '../api';
 
@@ -36,6 +36,7 @@ class Details extends React.Component{
     return(
         <div className={styles.container}>
             <DetailsCard sTitle={selectionTitle} slug={slugTitle} c19Data={c19Data} />
+            <SelectionChart slug={slugTitle}> </SelectionChart>
         </div>
      
         )
