@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { fetchc19DailyData } from '../../api';
+import { fetchc19DailyConfirmedData, fetchc19DailyDeathsData } from '../../api';
 import { Line, Bar } from 'react-chartjs-2';
 import styles from './SChart.module.css';
 const SelectionChart = ({ slug: slugTitle, sTitle:selectionTitle}) => {
 
     const [dailyData, setDailyData] = useState([]);
+    const [dailyDeathsData, setDailyDeathsData] = useState([]);
 
     useEffect(() => {
 
-        // console.log(slugTitle)
         const fetchAPI = async () => {
-            // console.log("within fetchAPI")
-            setDailyData(await fetchc19DailyData(slugTitle));
+           
+            setDailyData(await fetchc19DailyConfirmedData(slugTitle));
+            setDailyDeathsData(await fetchc19DailyDeathsData(slugTitle));
         }
         fetchAPI();
     }, []);
@@ -27,6 +28,12 @@ const SelectionChart = ({ slug: slugTitle, sTitle:selectionTitle}) => {
                         borderColor: 'rgb(255, 255, 255)',
                         fill: true,
                         backgroundColor: 'rgb(255, 255, 255,.2)',
+                    }, {
+                        data: dailyDeathsData.map(({Cases})=>Cases),
+                        label: "Deaths",
+                        borderColor: 'rgb(218, 5, 86)',
+                        backgroundColor:'rgb(218, 5, 86,.7)' ,
+                        fill: true
                     }],
             }} options={{
                 responsive: true,
