@@ -38,7 +38,7 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
 
         <div className = {styles.topTitle}>Top Countries</div> 
         
-         <Link to={{ 
+         <Link style={{ textDecoration: 'none' }} to={{ 
              pathname:'/details',
              state:{
                  title: allCountries[0].Country,
@@ -56,7 +56,7 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
                     </div>
                     </div>
                 <div className = {styles.widthCol}>
-                    <div className = {styles.subTitle}>Total Infected:</div>
+                    <div className = {styles.subTitle}>Total Confirmed:</div>
                     <div  className = {styles.countVal} > <CountUp start={0} end={allCountries[0].TotalConfirmed} duration={1.5} separator="," /></div>
                 </div>
                 <div className = {styles.widthCol}>
@@ -67,7 +67,7 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
         </div>
          </Link> 
         {/* second place */}
-        <Link to={{ 
+        <Link style={{ textDecoration: 'none' }} style={{ textDecoration: 'none' }} to={{ 
              pathname:'/details',
              state:{
                  title: allCountries[1].Country,
@@ -85,7 +85,7 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
                     </div>
                     </div>
                 <div className = {styles.widthCol}>
-                    <div className = {styles.subTitle}>Total Infected:</div>
+                    <div className = {styles.subTitle}>Total Confirmed:</div>
                     <div  className = {styles.countVal} > <CountUp start={0} end={allCountries[1].TotalConfirmed} duration={1.5} separator="," /></div>
                 </div>
                 <div className = {styles.widthCol}>
@@ -96,7 +96,7 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
         </div>
         </Link>
         {/* third place */}
-        <Link to={{ 
+        <Link style={{ textDecoration: 'none' }} to={{ 
              pathname:'/details',
              
              state:{
@@ -115,7 +115,7 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
                     </div>
                     </div>
                 <div className = {styles.widthCol}>
-                    <div className = {styles.subTitle}>Total Infected:</div>
+                    <div className = {styles.subTitle}>Total Confirmed:</div>
                     <div  className = {styles.countVal} > <CountUp start={0} end={allCountries[2].TotalConfirmed} duration={1.5} separator="," /></div>
                 </div>
                 <div className = {styles.widthCol}>
@@ -126,7 +126,7 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
         </div>
         </Link>
         {/* Fourth Place */}
-        <Link to={{ 
+        <Link style={{ textDecoration: 'none' }} to={{ 
              pathname:'/details',
              state:{
                  title: allCountries[3].Country,
@@ -144,7 +144,7 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
                     </div>
                     </div>
                 <div className = {styles.widthCol}>
-                    <div className = {styles.subTitle}>Total Infected:</div>
+                    <div className = {styles.subTitle}>Total Confirmed:</div>
                     <div  className = {styles.countVal} > <CountUp start={0} end={allCountries[3].TotalConfirmed} duration={1.5} separator="," /></div>
                 </div>
                 <div className = {styles.widthCol}>
@@ -155,7 +155,7 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
         </div>
         </Link>
          {/* Fifth Place */}
-         <Link to={{ 
+         <Link style={{ textDecoration: 'none' }} to={{ 
              pathname:'/details',
              state:{
                  title: allCountries[4].Country,
@@ -173,7 +173,7 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
                     </div>
                     </div>
                 <div className = {styles.widthCol}>
-                    <div className = {styles.subTitle}>Total Infected:</div>
+                    <div className = {styles.subTitle}>Total Confirmed:</div>
                     <div  className = {styles.countVal} > <CountUp start={0} end={allCountries[4].TotalConfirmed} duration={1.5} separator="," /></div>
                 </div>
                 <div className = {styles.widthCol}>
