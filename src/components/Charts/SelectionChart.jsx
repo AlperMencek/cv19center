@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { fetchc19DailyConfirmedData, fetchc19DailyDeathsData } from '../../api';
+import { fetchc19DailyConfirmedData, fetchc19DailyDeathsData, fetchc19DailyRecoveredData } from '../../api';
 import { Line, Bar } from 'react-chartjs-2';
 import styles from './SChart.module.css';
 const SelectionChart = ({ slug: slugTitle, sTitle:selectionTitle}) => {
 
     const [dailyData, setDailyData] = useState([]);
     const [dailyDeathsData, setDailyDeathsData] = useState([]);
+    const [dailyRecoveredData, setDailyRecoveredData] = useState([]);
 
     useEffect(() => {
 
@@ -13,6 +14,8 @@ const SelectionChart = ({ slug: slugTitle, sTitle:selectionTitle}) => {
            
             setDailyData(await fetchc19DailyConfirmedData(slugTitle));
             setDailyDeathsData(await fetchc19DailyDeathsData(slugTitle));
+            setDailyRecoveredData(await fetchc19DailyRecoveredData(slugTitle));
+
         }
         fetchAPI();
     }, []);
@@ -34,7 +37,14 @@ const SelectionChart = ({ slug: slugTitle, sTitle:selectionTitle}) => {
                         borderColor: 'rgb(218, 5, 86)',
                         backgroundColor:'rgb(218, 5, 86,.7)' ,
                         fill: true
-                    }],
+                    }, {
+                        data: dailyRecoveredData.map(({Cases})=>Cases),
+                        label: "Recovered",
+                        borderColor: 'rgb(51, 255, 175  )',
+                        backgroundColor:'rgb(51, 255, 175 ,.5)' ,
+                        fill: true
+                    }
+                ],
             }} options={{
                 responsive: true,
                 maintainAspectRatio: false,
