@@ -31,7 +31,6 @@ const Standings= ({c19data:{Global , dateTime,Countries}}) => {
 }
   if(!Global){return('loading...')}
    let Country1 = allCountries[0];
-   console.log(Country1)
    if(allCountries.length != 0){
     return(
     

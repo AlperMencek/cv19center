@@ -15,7 +15,7 @@ const SelectionChart = ({ slug: slugTitle, sTitle:selectionTitle}) => {
         }
         fetchAPI();
     }, []);
-
+    if(!dailyData.length){ return(" Please Select another location")}
     const lineChart = (
         dailyData.length ? (<Line
             data={{

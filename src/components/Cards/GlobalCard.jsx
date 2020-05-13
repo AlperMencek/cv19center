@@ -15,7 +15,8 @@ const useStyles = makeStyles({
 const GlobalCard = ({c19data:{Global , dateTime,Countries}}) => {
   const classes = useStyles();  
   // console.log("The COUNTRIES ARE", Countries)
-  if(!Global){return('loading...')}
+  if(!Global){return('loading...', window.location.reload()
+  )}
    
     return(
       <div className={styles.container}>

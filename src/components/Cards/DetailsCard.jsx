@@ -15,12 +15,12 @@ import {BrowserRouter as Router, Switch, Route,Link } from "react-router-dom";
 const DetailsCard = ({sTitle:selectionTitle, slug:slugTitle, c19Data}) =>{
     console.log(c19Data)
     // if(!Countries){return('loading...')}
-    if(!c19Data){return('loading...')}
+    if(!c19Data){return('loading... c19Data')}
     var Arr = c19Data;
     var selection = Arr.find(obj => {
         return obj.Slug === slugTitle
       })
-
+    if(!selection){return('No Data for '+selectionTitle)}
 
 return(
     <div className={styles.container}>
