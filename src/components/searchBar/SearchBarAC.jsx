@@ -55,8 +55,7 @@ const SearchBarAC = ({c19data:{Global , dateTime,Countries}}) => {
      let slug;
     if(fetchedCountries.length && !redirect){
         const selections = fetchedCountries
-      
-    
+
         return(
          
           <div className={styles.container}>
@@ -65,6 +64,7 @@ const SearchBarAC = ({c19data:{Global , dateTime,Countries}}) => {
                 style={{ width: 300, background:'white'}}
                 options={selections}
                 classes={classes}
+                
                 autoHighlight
                 getOptionLabel={(option) => (option.Slug)}
                 renderOption={(option) => (
@@ -82,6 +82,7 @@ const SearchBarAC = ({c19data:{Global , dateTime,Countries}}) => {
                     inputProps={{
                       ...params.inputProps,
                       autoComplete: 'new-password', // disable autocomplete and autofill
+                      autoComplete:'off',
                     }}
               />
               )}
