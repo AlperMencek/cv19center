@@ -6,7 +6,7 @@
     align-items: center;
     margin: 50px 0;
     color: black;
-    background-color: aquamarine;
+    background-color: #48ecdcf8;
     width: 600px;
     font-weight: 600;
 
@@ -70,7 +70,7 @@ h6{
     .container{
         flex-direction: column;
         align-items: center;
-        width: 60%;
+        width: 80%;
         margin: 3.5%;
         
     }

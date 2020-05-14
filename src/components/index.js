@@ -4,4 +4,4 @@ export { default as SearchBarAC } from './SearchBar/SearchBarAC';
 export { default as Standings } from './Standings/Standings';
 export { default as DetailStats } from './Stats/DetailStats';
 export { default as SelectionChart } from './Charts/SelectionChart';
-
+export { default as Footer } from './Footer/Footer';

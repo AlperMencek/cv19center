@@ -1,7 +1,10 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { DetailStats, SelectionChart } from '../components';
-import styles from './details.module.css'
+import styles from './details.module.css';
+import logo from '../images/CVCenterLogo.png';
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -32,6 +35,7 @@ class Details extends React.Component {
             console.log(c19Data)
             return (
                 <div className={styles.container}>
+                    <Link push className={styles.link} to={{  pathname:'/'}}><img src={logo} alt="Corona Virus Center" resizeMode="contain"/></Link>
                     <DetailStats sTitle={selectionTitle} slug={slug} c19Data={c19Data} />
                     <SelectionChart slug={slug} sTitle={selectionTitle}> </SelectionChart>
                 </div>

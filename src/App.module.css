@@ -8,6 +8,15 @@ body{
     justify-content: center;
     flex-direction: column;
 }
+.link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+img{
+   width:55%;
+}
 
 @media( max-width:770px ){
     .container{
@@ -16,5 +25,8 @@ body{
 
     .image{
         width: 100%;
+    }
+    img{
+        width: 70%;
     }
 }
