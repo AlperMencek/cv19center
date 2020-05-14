@@ -1,76 +1,77 @@
 import React, { useState, useEffect } from 'react';
-import {fetchDailyData} from '../../api';
-import { Line, Bar} from 'react-chartjs-2';
+import { fetchDailyData } from '../../api';
+import { Line } from 'react-chartjs-2';
 import styles from './Charts.module.css';
 const Charts = () => {
     const [dailyData, setDailyData] = useState([]);
-    
-    useEffect(()=> {
+
+    useEffect(() => {
         const fetchAPI = async () => {
             setDailyData(await fetchDailyData());
         }
         fetchAPI();
-    },[]);
+    }, []);
 
     const lineChart = (
-        dailyData.length?(<Line
-        data={{
-        labels: dailyData.map(({date})=>new Date(date).toLocaleDateString()),
-        datasets:[
-            {
-            data: dailyData.map(({confirmed})=>confirmed),
-            label: "Confirmed",
-            borderColor: 'rgb(255, 255, 255)',
-            fill: true,
-            backgroundColor:'rgb(255, 255, 255,.2)',
-        }, 
-        {
-            data: dailyData.map(({deaths})=>deaths),
-            label: "Deaths",
-            borderColor: 'rgb(218, 5, 86)',
-            backgroundColor:'rgb(218, 5, 86,.7)' ,
-            fill: true
-        }],
-        }} options = {{
-            responsive:true, 
-            maintainAspectRatio: false,
-            title:{text:"World Data",display:true, fontColor:'white',fontSize: 30, },
-            scales:{
-                yAxes:[
+        dailyData.length ? (<Line
+            data={{
+                labels: dailyData.map(({ date }) => new Date(date).toLocaleDateString()),
+                datasets: [
                     {
-                        ticks:{
+                        data: dailyData.map(({ confirmed }) => confirmed),
+                        label: "Confirmed",
+                        borderColor: 'rgb(255, 255, 255)',
+                        fill: true,
+                        backgroundColor: 'rgb(255, 255, 255,.2)',
+                    },
+                    {
+                        data: dailyData.map(({ deaths }) => deaths),
+                        label: "Deaths",
+                        borderColor: 'rgb(218, 5, 86)',
+                        backgroundColor: 'rgb(218, 5, 86,.7)',
+                        fill: true
+                    }],
+            }} options={{
+                responsive: true,
+                maintainAspectRatio: false,
+                title: { text: "World Data", display: true, fontColor: 'white', fontSize: 30, },
+                scales: {
+                    yAxes: [
+                        {
+                            ticks: {
                                 fontColor: 'white',
-                                maxTicksLimit:10,
+                                maxTicksLimit: 10,
                                 fontSize: 13,
-                        },
-                       gridLines:{
-                           
-                       },
-                       
+                            },
+                            gridLines: {
+
+                            },
+
+                        }
+                    ],
+                    xAxes: [
+                        {
+                            ticks: {
+                                fontColor: 'white',
+                                fontSize: 11,
+                            },
+                            gridLines: {
+
+                            },
+                        }
+                    ]
+                },
+
+                legend: {
+
+                    labels: {
+                        fontColor: 'white'
+                    }
                 }
-            ],
-        xAxes:[
-            {
-                ticks:{
-                    fontColor: 'white',
-                    fontSize: 11,
-            },
-           gridLines:{
-               
-           },   
-            }
-        ]},  
-            
-            legend:{
-                
-                labels:{
-                    fontColor:'white'
-                }
-            }
-        }} />) : null
+            }} />) : null
     )
-    
-    return(
+
+    return (
         <div className={styles.container}>
             {lineChart}
         </div>

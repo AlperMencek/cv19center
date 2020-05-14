@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { fetchc19DailyConfirmedData, fetchc19DailyDeathsData, fetchc19DailyRecoveredData } from '../../api';
-import { Line, Bar } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import styles from './SChart.module.css';
 const SelectionChart = ({ slug: slugTitle, sTitle:selectionTitle}) => {
 
@@ -84,8 +84,6 @@ const SelectionChart = ({ slug: slugTitle, sTitle:selectionTitle}) => {
                 }
             }} />) : null
     )
-    console.log(dailyData);
-
     return (
         <div className={styles.container}>
             {lineChart}

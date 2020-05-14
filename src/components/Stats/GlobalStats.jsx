@@ -1,19 +1,11 @@
 import React from 'react';
-import { Card, CardContent, Typography, Grid } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import NumberFormat from 'react-number-format';
-import styles from './detailCard.module.css'
+import styles from './detailStats.module.css'
 import CountUp from 'react-countup';
 
-const useStyles = makeStyles({
-  bot: {
-    paddingBottom: '2em',
 
-  }
-});
 
 const GlobalCard = ({ c19data: { Global, dateTime, Countries } }) => {
-  const classes = useStyles();
   if (!Global) {
     return ('loading...', window.location.reload()
     )

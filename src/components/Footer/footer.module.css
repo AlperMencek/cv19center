@@ -1,12 +1,40 @@
 .container{
     background-color: whitesmoke;
     display: flex;
+    align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 50px;
-    margin-top: 4%;
+    margin-top: 15%;
+}
+.logos{
+    align-items: center;
+    align-content: center;
+    margin-left:auto;
+    text-align: center;
+
+}
+.ghimage{
+    width: 3%;
+   
+}
+.ppimage{
+    width: 3%;
+    
+}
+.text{
+    font-size: .5em;
 }
 
-.text{
-    font-size: .3em;
+@media( max-width:770px ){
+    .container{
+        width: fit-content;
+        margin-top: 30%;
+    }
+    .ghimage{
+        width: 7%;
+        
+    }
+    .ppimage{
+        width: 7%;
+    }
 }

@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { fetchC19Countries, countries } from '../../api';
+import { fetchC19Countries } from '../../api';
 
 import styles from './searchBar.module.css';
 //changes only when etfetchedcountries change or when another country is selected.
@@ -88,7 +88,6 @@ const SearchBarAC = ({ c19data: { Global, dateTime, Countries } }) => {
   /* Once location is selected from picker*/
 
   if (redirect) {
-    console.log(redirect.Country)
     return (
       <Redirect push to={{
         pathname: '/details',

@@ -28,11 +28,9 @@ class Details extends React.Component {
         const { selectionTitle } = this.state
 
         if (this.props.location.state && this.props.location.state.slug && this.props.location.state.all) {
-            console.log('within conditional')
 
             const slug = this.props.location.state.slug;
             const c19Data = this.props.location.state.all;
-            console.log(c19Data)
             return (
                 <div className={styles.container}>
                     <Link push className={styles.link} to={{  pathname:'/'}}><img src={logo} alt="Corona Virus Center" resizeMode="contain"/></Link>
