@@ -11,7 +11,7 @@ const Footer = () =>{
             <div className={styles.text}>	Data pulled from Center for Systems Science and Engineering (CSSE) at Johns Hopkins University </div>
             <div>Support the Project: </div>
             <div className={styles.logos}>
-            
+                
                 <a href='https://github.com/AlperMencek' ><img className={styles.ghimage} src={githubLogo} alt="Github" resizeMode="contain"/></a>
                 <a href='https://paypal.me/AlperMencek'><img className={styles.ppimage} src={paypalLogo} alt="Corona Virus Center" resizeMode="contain"/></a>
 
