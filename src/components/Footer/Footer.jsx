@@ -7,8 +7,10 @@ const Footer = () =>{
     return(
         <div className={styles.container}>CoronaVirus Center 
             <div className={styles.text}>	&copy; AlperMencek, all rights reserved </div>
-            <div className={styles.text}>	Version: 1.0.1 (beta)</div>
-            <div className={styles.text}>	Data pulled from Center for Systems Science and Engineering (CSSE) at Johns Hopkins University </div>
+            <div className={styles.text}>	Version: 1.1.1 (beta)</div>
+            <div className={styles.textS}>	Country data Sourced from  </div>
+            <div className={styles.textS}>   Center for Systems Science and Engineering (CSSE)  </div>
+            <div className={styles.textS}>   at Johns Hopkins University</div>
             <div>Support the Project: </div>
             <div className={styles.logos}>
                 

@@ -1,0 +1,24 @@
+.container{
+    
+    justify-content: center;
+    width: 75%;
+    
+    flex-direction: column;
+}
+
+.topTitle{
+    margin-top: 2%;
+    font-size: 2em;
+    text-align: center;
+    color: whitesmoke;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+    
+}
+@media( max-width:770px ){
+    .container{
+      width: 100%;
+      
+    }
+}

@@ -4,21 +4,24 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
-    margin-top: 15%;
+    margin-top: 8%;
 }
 .logos{
     
     text-align: center;
 }
 .ghimage{
-    width: 3%;
+    width: 4%;
    
 }
 .ppimage{
-    width: 2.8%;
+    width: 3.8%;
     
 }
 .text{
+    font-size: .7em;
+}
+.textS{
     font-size: .5em;
 }
 
