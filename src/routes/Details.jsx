@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { DetailStats, SelectionChart } from '../components';
 import styles from './details.module.css';
 import logo from '../images/CVCenterLogo.png';
-import { Link } from 'react-router-dom';
+import { Link ,Redirect } from 'react-router-dom';
 
 
 
@@ -42,6 +42,11 @@ class Details extends React.Component {
         return (
             <div className={styles.container}>
                 Loading...
+                <Redirect push to={{
+                    pathname: '/',
+
+                }}
+                />
             </div>
         )
 
