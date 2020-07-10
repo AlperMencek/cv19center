@@ -4,12 +4,13 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { makeStyles } from '@material-ui/core/styles';
 import axios from "axios";
-
+import countries from './../../json/countries.json';
 
 import { fetchC19Countries } from '../../api';
 
 import styles from './searchBar.module.css';
 //changes only when etfetchedcountries change or when another country is selected.
+console.log(countries)
 function countryToFlag(isoCode) {
   return typeof String.fromCodePoint !== 'undefined'
     ? isoCode
@@ -42,7 +43,8 @@ const SearchBarAC = ({ c19data: { Global, dateTime, Countries } }) => {
 
   useEffect(() => {
     const fetchCountries = async () => {
-      setFetchedCountries(await axios.get(`https://api.covid19api.com/countries`));
+      // setFetchedCountries(await axios.get(`https://api.covid19api.com/countries`));
+      setFetchedCountries(countries)
 
     }
 

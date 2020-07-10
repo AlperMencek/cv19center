@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 
 const Standings = ({ c19data: { Global, Countries } }) => {
-    console.log(Global)
     if (!Countries) return ('loadingCOUNTRIES...')
     var allCountries = Countries;
     //Sort the countries in order to get the top Total confirmed cases.

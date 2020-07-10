@@ -5,12 +5,13 @@ import CountUp from 'react-countup';
 
 
 
-const GlobalCard = ({ c19data: { Global, dateTime, Countries } }) => {
+const GlobalCard = ({ c19data: { Global, Date:dateTime, Countries } }) => {
   if (!Global) {
     return ('loading...', window.location.reload()
     )
   }
-
+  console.log("HERE")
+console.log(dateTime)
   return (
     <div className={styles.container}>
       <div className={styles.title}>World Wide
