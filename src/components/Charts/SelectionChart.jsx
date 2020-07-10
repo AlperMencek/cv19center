@@ -13,8 +13,8 @@ const SelectionChart = ({ slug: slugTitle, sTitle:selectionTitle}) => {
         const fetchAPI = async () => {
            
             setDailyData(await fetchc19DailyConfirmedData(slugTitle));
-            setTimeout(async() => setDailyDeathsData(await fetchc19DailyDeathsData(slugTitle)),1100);
-            setTimeout(async() => setDailyRecoveredData(await fetchc19DailyRecoveredData(slugTitle)),2200);
+            setDailyDeathsData(await fetchc19DailyDeathsData(slugTitle));
+            setDailyRecoveredData(await fetchc19DailyRecoveredData(slugTitle));
 
         }
         fetchAPI();
