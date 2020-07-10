@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-ro
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { makeStyles } from '@material-ui/core/styles';
+import axios from "axios";
+
 
 import { fetchC19Countries } from '../../api';
 
@@ -40,13 +42,13 @@ const SearchBarAC = ({ c19data: { Global, dateTime, Countries } }) => {
 
   useEffect(() => {
     const fetchCountries = async () => {
-      setFetchedCountries(await fetchC19Countries());
+      setFetchedCountries(await axios.get(`https://api.covid19api.com/countries`));
 
     }
 
     fetchCountries();
-   }, [setFetchedCountries]);
-
+   }, []);
+console.log(fetchedCountries)
   const classes = useStyles();
   if (fetchedCountries.length && !redirect) {
     const selections = fetchedCountries
@@ -100,13 +102,13 @@ const SearchBarAC = ({ c19data: { Global, dateTime, Countries } }) => {
       }}
       />
     )
-  }
+  }else{
 
   return (
     <div className={styles.container}>
       Loading...
     </div>
   )
-
+  }
 }
 export default SearchBarAC;

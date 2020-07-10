@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 
 
 const Standings = ({ c19data: { Global, Countries } }) => {
-    if (!Countries) return ('loading...')
+    console.log(Global)
+    if (!Countries) return ('loadingCOUNTRIES...')
     var allCountries = Countries;
     //Sort the countries in order to get the top Total confirmed cases.
     if (allCountries) {
@@ -13,7 +14,7 @@ const Standings = ({ c19data: { Global, Countries } }) => {
             return b.TotalConfirmed - a.TotalConfirmed;
         })
     }
-    if (!Global) { return ('loading...') }
+    if (!Global) { return ('loadingGlobal...') }
     if (allCountries.length !== 0) {
         return (
 
