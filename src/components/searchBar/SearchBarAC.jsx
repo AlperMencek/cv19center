@@ -45,7 +45,7 @@ const SearchBarAC = ({ c19data: { Global, dateTime, Countries } }) => {
     }
 
     fetchCountries();
-  }, [setFetchedCountries]);
+   }, [setFetchedCountries]);
 
   const classes = useStyles();
   if (fetchedCountries.length && !redirect) {
