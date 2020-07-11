@@ -1,6 +1,6 @@
 import React from 'react';
 import NumberFormat from 'react-number-format';
-import styles from './detailStats.module.css'
+import styles from './DetailStats.module.css'
 import CountUp from'react-countup';
 
 //Get the value from Details
