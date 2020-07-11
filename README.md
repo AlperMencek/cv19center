@@ -16,8 +16,8 @@ Example of app:
 
 
 API'S in use:
-https://covid19.mathdro.id/api
-https://api.covid19api.com/ -subscribed
-https://covidtracking.com/api/states
+* https://covid19.mathdro.id/api
+* https://api.covid19api.com/ -subscribed
+* https://covidtracking.com/api/states
 
 US states map implemented with Google charts
