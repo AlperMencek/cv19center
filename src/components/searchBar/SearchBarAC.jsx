@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { makeStyles } from '@material-ui/core/styles';
+import axios from "axios";
 import countries from './../../json/countries.json';
 
+import { fetchC19Countries } from '../../api';
 
 import styles from './SearchBar.module.css';
 //changes only when etfetchedcountries change or when another country is selected.
@@ -17,7 +19,7 @@ function countryToFlag(isoCode) {
     : isoCode;
 }
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
   inputRoot: {
     color: "black",
     "& .MuiOutlinedInput-notchedOutline": {
@@ -31,11 +33,11 @@ const useStyles = makeStyles(() => ({
     }
   }
 }));
-const SearchBarAC = ({ c19data: { Countries } }) => {
+const SearchBarAC = ({ c19data: { Global, dateTime, Countries } }) => {
 
   const [fetchedCountries, setFetchedCountries] = useState([]);
   const [redirect, setRedirect] = useState();
-  function handleInputChange(value) {
+  function handleInputChange(event, value) {
     setRedirect(value);
   }
 
@@ -48,7 +50,6 @@ const SearchBarAC = ({ c19data: { Countries } }) => {
 
     fetchCountries();
    }, []);
-
   const classes = useStyles();
   if (fetchedCountries.length && !redirect) {
     const selections = fetchedCountries
