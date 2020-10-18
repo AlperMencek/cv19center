@@ -1,7 +1,7 @@
 # cv19center
 https://cv19center.com/
 
-A coronavirus tracker multipage app created inorder to introduce myself to react. Hosted and running on firebase.
+A coronavirus tracker web app created inorder to introduce myself to react. Hosted and running on firebase.
 * Global data
 * Worldwide Country data
 * Country standings
